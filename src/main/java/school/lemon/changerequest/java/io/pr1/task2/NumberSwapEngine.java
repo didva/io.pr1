@@ -14,8 +14,7 @@ public interface NumberSwapEngine {
      * <p>
      * Here is valid example of possible file content:
      * <pre>
-     *     1 1,2,3,4,    7 ,    4 , 10,    0,    9999 ,  1,    0,       2
-     *     2
+     *     1,2,3,4,    7 ,    4 , 10,    0,    9999 ,  1,    0,       2
      * </pre>
      * In the given example above there is only one maximum element that is equal to 9999
      * and possible two minimum elements that are equal to 0.
@@ -23,33 +22,42 @@ public interface NumberSwapEngine {
      * In case you have got one maximum and more than one minimum element - swap maximum with the very <b>first</b> minimum element.
      * For the example above, the result should be:
      * <pre>
-     *     1 1,2,3,4,    7 ,    4 , 10,    9999,     0,  1,    0,       2
-     *     2
+     *     1,2,3,4,    7 ,    4 , 10,    9999,     0,  1,    0,       2
      * </pre>
      *
      * In case you have got one minimum and more than one maximum element - swap minimum with the <b>first</b> maximum element.
      * From:
      * <pre>
-     *     1 1,2,2,3,4,9,5,6,9
-     *     2
+     *     1,2,2,3,4,9,5,6,9
      * </pre>
      * To:
      * <pre>
-     *     1 9,2,2,3,4,1,5,6,9
-     *     2
+     *     9,2,2,3,4,1,5,6,9
      * </pre>
      *
      * In case you have got many minimum and many maximum elements - swap earlier minimum with earlier maximum element.
      * From:
      * <pre>
-     *     1 1,1,2,3,4,9,5,6,9,9
-     *     2
+     *     1,1,2,3,4,9,5,6,9,9
      * </pre>
      * To:
      * <pre>
-     *     1 9,9,2,3,4,1,5,6,1,9
-     *     2
+     *     9,9,2,3,4,1,5,6,1,9
      * </pre>
+     * Detailed show case of the case with many minimum and many maximum elements:
+     * <pre>
+     *     1,1,2,3,4,9,5,6,9,9
+     *     ^ ^       ^     ^ ^
+     *     n n       x     x x
+     *
+     *     n1 -> x1:
+     *     9,1,2,3,4,1,5,6,9,9
+     *     n2 -> x2:
+     *     9,9,2,3,4,1,5,6,1,9
+     * </pre>
+     * n - minimum element
+     * x - maximum element
+     *
      * @param filename filename of file to check
      * @return true if anything was changed in the given file
      * @throws FileNotFoundException if file with given filename doesn't exist
