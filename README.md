@@ -1,4 +1,4 @@
-IO Practial Task 1
+IO Practice Task 1
 ===============
 
 1\. Has Number With Index
