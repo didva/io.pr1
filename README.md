@@ -1,10 +1,11 @@
-IO Practice Task 1
+IO. Practice Task 1
 ===============
 
-1\. Has Number With Index
+1\. NumberSearchEngine
 ---------------
 
-Determine whether given file has number with given index.
+Implement `NumberSearchEngine` interface and its function `hasNumberWithIndex` 
+to determine whether given file has number with given index.
 
 Expect that given file(if present in filesystem) will have only one unsigned integer per line.
 
@@ -26,10 +27,11 @@ In the given example above there are numbers with indexes: `[1,2,4,5,7,9,10]` an
 Find additional information in JavaDocs of `NumberSearchEngine` interface.
 
 
-2\. Swap Minimum And Maximum
+2\. NumberSwapEngine
 ---------------
 
-Swap minimum and maximum element in file with comma-separated sequence of unsigned integers.
+Implement `NumberSwapEngine` interface and its function `swapMinAndMax` to 
+swap minimum and maximum element in file with comma-separated sequence of unsigned integers.
 
 Expect that given file(if present in filesystem) will contain comma-separated sequence of unsigned integers in only one line.
 
@@ -82,4 +84,95 @@ Swap second minimum with second maximum (n2 -> x2) result:
 
 result:
 9,9,2,3,4,1,5,6,1,9
+```
+
+3\. CountEngine
+---------------
+
+Implement `CountEngine` interface and number of its methods.
+
+#### countSpecificCharacter
+
+Count amount of characters that are equal to given character 'c'
+
+Only characters that are equal to character 'c' should be counted
+
+Here is example of valid file content with 5 '@' characters:
+```
+1 Some line with only one 'at' character: @
+2
+3 No 'at' characters
+4 Ch@ngeRequest
+5 @@@
+```
+
+#### countCharacters
+
+Count amount of characters in file with given filename
+
+Any characters should be applied
+
+#### countWords
+
+Count amount of words in file with given filename
+
+We are assuming that word is sequence of characters that have more than one character of given character class `[a-zA-Z0-9]`
+and may have any amount of other characters **except** whitespaces.
+
+Here is example of valid file content with 7 words:
+```
+1 F1rst l!ne h@ve f)ve words!!!! ! ! ! ! ! !
+2                        .. !
+3 6!
+4 this_is_the_last_word :-)
+```
+So, from the example above, following are valid words:
+```
+F1rst
+l!ne
+h@ve
+f)ve
+words
+6!
+this_is_the_last_word
+```
+
+#### countParagraphs
+
+Count amount of paragraphs in file with given filename
+
+We are assuming that paragraphs are separated by 2(or more) empty lines.
+
+We are also assuming that paragraph is a text, that have more than one word.
+
+Here is example of valid file content with 3 paragraphs:
+```
+1 First paragraph line one.
+2 First paragraph line two.
+3
+4
+5 Second paragraph line one.
+6
+7 Second paragraph line three.
+8
+9
+10                  !!!!!!!!
+11
+12
+13 Third paragraph line one.
+14
+15
+16
+17
+18
+```
+For the example above function should return 3.
+
+Here is example of valid file content with 0 paragraphs:
+```
+1 @!#$%^&*!
+2 ((@
+3 ;;:'
+4
+5 '!
 ```
